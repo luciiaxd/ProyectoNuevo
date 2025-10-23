@@ -1,0 +1,26 @@
+#title {
+    font-size: larger;
+    display: flex;
+    justify-content: center;
+    font-size:70px;
+    color: rgb(0, 0, 0);
+    margin-top: 50px;
+    height: 120px;
+}
+.btn-action {
+    background-color: rgb(165, 42, 42);
+    color: rgb(255, 255, 255);
+}
+
+#card{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+#desc{
+    font-size: 20px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
