@@ -1,7 +1,8 @@
 <nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">$HIRKIN</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -12,18 +13,24 @@
         <li class="nav-item">
           <a class="nav-link" href="about">about</a>
         </li>
- 
 
-        <li class="nav-item">
-          <a class="nav-link" href="ropa">R</a>
-        </li>
 
 
         <li class="nav-item">
-          <a class="nav-link" href="products" >Productos</a>
-          
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Productos </a>
+          <div class="dropdown">
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="Perfumes">Perfumes</a></li>
+              <li><a class="dropdown-item" href="Carteras">Carteras</a></li>
+              <li><a class="dropdown-item" href="Ropa">Ropa</a></li>
+              <li><a class="dropdown-item" href="Zapatos">Zapatos</a></li>
+              <li><a class="dropdown-item" href="Joyas">Joyas</a></li>
+            </ul>
+          </div>
+
+
         </li>
-<!-- 
+        <!-- 
         <li class="nav-item">
           <a class="nav-link" href="carteras">Carteras</a>
         </li>
@@ -43,12 +50,12 @@
 
       </ul>
       <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
     </div>
   </div>
-  
+
 </nav>
 
 <!-- etiqueta que muestra el contenido de mi aplicacion -->

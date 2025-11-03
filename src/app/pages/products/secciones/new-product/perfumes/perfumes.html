@@ -1,1 +1,72 @@
-<p>perfumes works!</p>
+<div class="container">
+    <h2>Nuevo producto</h2>
+    <!-- [formGroup]="formGroup"k -->
+    <form >
+        <div class="mb-3">
+        <label for="nombre" class="form-label">nombre</label>
+        <input id="nombre" type="text" class="form-control">
+        </div>
+
+        <div class="mb-3"></div>
+
+        <div class="mb-3"></div>
+
+        <div class="mb-3"></div>
+        
+        <div class="mb-3"></div>
+    </form>
+</div>
+<div class="container">
+    <div class="row">
+        <div *ngFor="let i of infoTarjeta" class="col-lg-3 col-md-6 col-sm-12 col-xs-12 mb-4">
+            <!--let i definicion de la variable que representa 1 elemento de la coleccion infotarjeta-->
+            <!--ngfor DIRECTIVA que permite iterar colecciones/arreglos funcionalidad similar al for de foreach-->
+            <div id="card">
+                <div class="card" >
+                    <img src="{{i.img}}" class="card-img-top" alt="{{i.alt}}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{i.titulo}}</h5>
+                        <p class="card-text">{{i.descripcion}}-{{i.precio}}</p>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#verMasinfo" (click)="vermas(i)">Ver mas</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!--<div class="row">
+        <div class="lg:col-6 md:col-12 sm:col-12 col-6">
+            <div id="card">
+                <div class="card" >
+                    <img src="../../../assets/cloudpink.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Cloud Pink</h5>
+                        <p class="card-text">Cloud Pink es una fragancia que evoca la ligereza y la frescura de una nube,
+                            donde el jazmín verde sirve como contrapunto a la melodía de la noche y la tierra.</p>
+                        <a href="#" class="btn btn-action">Agregar al carrito</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+</div>
+
+
+<div class="modal fade" id="verMasinfo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">xd</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="{{tarjetaSeleccionada?.img}}" alt="{{tarjetaSeleccionada?.alt}}">
+        {{tarjetaSeleccionada?.descripcion}}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

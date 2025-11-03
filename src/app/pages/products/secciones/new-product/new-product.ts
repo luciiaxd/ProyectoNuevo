@@ -12,5 +12,6 @@ import { FormControl,FormGroup,ReactiveFormsModule,Validator } from '@angular/fo
   styleUrl: './new-product.css'
 })
 export class NewProduct {
+formGroup: any;
 
 }

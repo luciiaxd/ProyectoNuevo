@@ -18,7 +18,7 @@ public infoTarjeta: Tarjeta [];
         alt: "Imagen de un perfume",
         titulo: "Miss Dior",
         descripcion: "Oriental Floral",
-        fechapublicacion: 2025
+        precio: 2025
       },
       {
         id: "2T",
@@ -26,7 +26,7 @@ public infoTarjeta: Tarjeta [];
         alt: "Imagen de un perfume",
         titulo: "Chanel N°5",
         descripcion: "Aldehídos, ylang-ylang, neroli, bergamota y limón.",
-        fechapublicacion: 2025
+        precio: 2025
       },
       {
         id: "3T",
@@ -34,7 +34,7 @@ public infoTarjeta: Tarjeta [];
         alt: "Imagen de un perfume",
         titulo: "The one Dolce&Gabbana",
         descripcion: "dulce floral",
-        fechapublicacion: 2025
+        precio: 2025
       },
       {
         id: "4T",
@@ -42,7 +42,7 @@ public infoTarjeta: Tarjeta [];
         alt: "Imagen de un perfume",
         titulo: "Beach Walk Maison Margiela",
         descripcion: "bergamota e ylang-ylang",
-        fechapublicacion: 2025
+        precio: 2025
       },
       {
         id: "5T",
@@ -50,7 +50,7 @@ public infoTarjeta: Tarjeta [];
         alt: "Imagen de un perfume",
         titulo: "Cloud Ariana Grande",
         descripcion: " floral frutal gourmand",
-        fechapublicacion: 2025
+        precio: 2025
       },
       {
         id: "6T",
@@ -58,7 +58,7 @@ public infoTarjeta: Tarjeta [];
         alt: "Imagen de un perfume",
         titulo: "Cloud Pink Ariana Grande",
         descripcion: "Oriental Vainilla",
-        fechapublicacion: 2025
+        precio: 2025
       },
       {
         id: "7T",
@@ -66,7 +66,7 @@ public infoTarjeta: Tarjeta [];
         alt: "aa",
         titulo:"Thank U, Next Ariana Grande",
         descripcion: " floral frutal gourmand",
-        fechapublicacion:0
+        precio:0
       },
       {
         id: "8T",
@@ -74,7 +74,7 @@ public infoTarjeta: Tarjeta [];
         alt: "Imagen de un perfume",
         titulo: "Ari Ariana Grande",
         descripcion: "Aroma floral frutal.",
-        fechapublicacion: 2025
+        precio: 2025
       }
       
     ]
