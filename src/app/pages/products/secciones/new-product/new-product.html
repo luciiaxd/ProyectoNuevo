@@ -1,18 +1,27 @@
 <div class="container">
     <h2>Nuevo producto</h2>
-    <!-- [formGroup]="formGroup"k -->
-    <form >
+    
+    <form [formGroup]="nuevoProducto" (ngSubmit)="crearProducto()">
+        
         <div class="mb-3">
-        <label for="nombre" class="form-label">nombre</label>
-        <input id="nombre" type="text" class="form-control">
+            <label for="nombre" class="form-label">nombre</label>
+            <input id="nombre" type="text" class="form-control" formControlName="nombre">
         </div>
 
-        <div class="mb-3"></div>
+        <div class="mb-3">
+            <label for="nombre" class="form-label">precio</label>
+            <input id="nombre" type="text" class="form-control" formControlName="precio">
+        </div>
 
-        <div class="mb-3"></div>
+        <div class="mb-3">
+            <label for="nombre" class="form-label">descripcion</label>
+            <input id="nombre" type="text" class="form-control" formControlName="descripcion">
+        </div>
 
-        <div class="mb-3"></div>
-        
-        <div class="mb-3"></div>
+        <div class="mb-3">
+            <label for="nombre" class="form-label">img</label>
+            <input id="nombre" type="text" class="form-control" formControlName="img">
+        </div>
+        <button type="submit" class="btn btn-primary w-100" [disabled]="!nuevoProducto.valid">Agregar producto</button>
     </form>
 </div>
