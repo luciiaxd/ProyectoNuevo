@@ -3,7 +3,8 @@
     display: flex;
     justify-content: center;
     font-size:70px;
-    color: rgb(0, 0, 0);
+    color: rgb(241, 208, 229);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* sombra al texto */
     margin-top: 50px;
     height: 120px;
 }

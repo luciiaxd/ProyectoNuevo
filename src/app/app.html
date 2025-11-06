@@ -8,10 +8,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="home">Home</a>
+          <a class="nav-link active" aria-current="page" href="home">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="about">about</a>
+          <a class="nav-link" href="about">Nosotros</a>
         </li>
 
         
@@ -21,11 +21,11 @@
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Productos </a>
           <div class="dropdown">
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="Perfumes">Perfumes</a></li>
-              <li><a class="dropdown-item" href="Carteras">Carteras</a></li>
-              <li><a class="dropdown-item" href="Ropa">Ropa</a></li>
-              <li><a class="dropdown-item" href="Zapatos">Zapatos</a></li>
-              <li><a class="dropdown-item" href="Joyas">Joyas</a></li>
+              <li><a class="dropdown-item" href="citrico">Cítrico</a></li>
+              <li><a class="dropdown-item" href="forales">Forales</a></li>
+              <li><a class="dropdown-item" href="amaderados">Amaderados</a></li>
+              <li><a class="dropdown-item" href="verde">Verde</a></li>
+              <li><a class="dropdown-item" href="dulces">Dulces</a></li>
             </ul>
           </div>
 
@@ -34,27 +34,34 @@
         
         <!-- 
         <li class="nav-item">
-          <a class="nav-link" href="carteras">Carteras</a>
+          <a class="nav-link" href="forales">Forales</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="zapatos">Zapatos</a>
+          <a class="nav-link" href="verde">Verde</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="joyas">Joyas</a>
+          <a class="nav-link" href="dulces">Dulces</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="carrito">Carrito</a>
+          <a class="nav-link" href="cart">Carrito</a>
         </li>
  -->
 
       </ul>
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        <button class="btn btn-outline-success" type="submit">Buscar</button>
       </form>
+      <!-- Botón de carrito con contador -->
+      <div class="ms-3">
+        <button class="btn btn-outline-primary position-relative" type="button" aria-label="Carrito">
+          Carrito
+          <span class="badge bg-danger ms-2">{{ cartService.cartCount$ | async }}</span>
+        </button>
+      </div>
     </div>
   </div>
 
@@ -70,37 +77,43 @@
 <body>
     <header>
         <h1>$hirkin 🌸</h1>
-        <p>Tu destino para fragancias legendarias.</p>
     </header>
 
     <main>
-        <h2>✨ La Colección Icónica ✨</h2>
-        
+        <h2> Un poco de lo nuevo </h2>
+
         <section class="perfume-list">
-            <div class="perfume-card">
-                <h3>Chanel N°5</h3>
-                <p>El epítome de la elegancia. Un clásico atemporal desde 1921.</p>
-                <img src="https://via.placeholder.com/150/f08080/FFFFFF?text=Chanel+N%C2%B05" alt="Botella de Chanel N°5">
-            </div>
-
-            <div class="perfume-card">
-                <h3>Dior J'adore</h3>
-                <p>Un bouquet floral luminoso y sofisticado que celebra la feminidad.</p>
-                <img src="https://via.placeholder.com/150/ffb6c1/FFFFFF?text=Dior+J'adore" alt="Botella de Dior J'adore">
-            </div>
-
-            <div class="perfume-card">
-                <h3>YSL Black Opium</h3>
-                <p>Adictivo y electrizante. La dosis de energía con notas de café y vainilla.</p>
-                <img src="https://via.placeholder.com/150/dda0dd/FFFFFF?text=YSL+Black+Opium" alt="Botella de YSL Black Opium">
-            </div>
-
-            <div class="perfume-card">
-                <h3>Carolina Herrera Good Girl</h3>
-                <p>Audaz y poderosa, en su icónico frasco de tacón de aguja.</p>
-                <img src="https://via.placeholder.com/150/f06292/FFFFFF?text=Good+Girl" alt="Botella de Good Girl">
+            <div class="perfume-card" *ngFor="let t of featuredTarjetas">
+                <h3>{{ t.titulo }}</h3>
+                <p>{{ t.descripcion }}</p>
+                <img [src]="t.img" [alt]="t.alt" loading="lazy">
+                <div class="mt-2">
+                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#verMasinfo" (click)="vermas(t)">Ver más</button>
+                </div>
             </div>
         </section>
+
+        <!-- Modal de detalle compartido -->
+        <div class="modal fade" id="verMasinfo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Detalle</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body text-center">
+                <img [src]="tarjetaSeleccionada?.img" [alt]="tarjetaSeleccionada?.alt" class="img-fluid mb-3" loading="lazy">
+                <h5>{{ tarjetaSeleccionada?.titulo }}</h5>
+                <p>{{ tarjetaSeleccionada?.descripcion }}</p>
+                <p *ngIf="tarjetaSeleccionada">Precio: {{ tarjetaSeleccionada.precio | currency:'ARS':'symbol' }}</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="addToCart(tarjetaSeleccionada)">Agregar al carrito</button>
+              </div>
+            </div>
+          </div>
+        </div>
     </main>
 
     <footer>

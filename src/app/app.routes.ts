@@ -2,11 +2,12 @@ import { Routes } from '@angular/router';
 import { Home } from './pages/home/home';
 import { About } from './pages/about/about';
 import { Products } from './pages/products/products';
-import { Perfumes } from './pages/products/secciones/new-product/perfumes/perfumes';
-import { Carteras } from './pages/products/secciones/new-product/carteras/carteras';
-import { Ropa } from './pages/products/secciones/new-product/ropa/ropa';
-import { Zapatos } from './pages/products/secciones/new-product/zapatos/zapatos';
-import { Joyas } from './pages/products/secciones/new-product/joyas/joyas';
+import { Perfumes } from './pages/products/secciones/new-product/citrico/perfumes';
+import { Carteras } from './pages/products/secciones/new-product/forales/carteras';
+import { Ropa } from './pages/products/secciones/new-product/amaderados/ropa';
+import { Zapatos } from './pages/products/secciones/new-product/verde/zapatos';
+import { Joyas } from './pages/products/secciones/new-product/dulces/joyas';
+import { CartPage } from './pages/cart/cart';
 
 export const routes: Routes = [
     {
@@ -16,9 +17,10 @@ export const routes: Routes = [
     {path: `home`, component: Home},
     {path: `about`, component: About},
     {path: `products`, component: Products},
-    {path: 'perfumes', component: Perfumes},
-    {path: 'carteras', component: Carteras},
-    {path: 'ropa', component: Ropa},
-    {path: 'zapatos', component: Zapatos},
-    {path: 'joyas', component: Joyas}
+    {path: 'citrico', component: Perfumes},
+    {path: 'forales', component: Carteras},
+    {path: 'amaderados', component: Ropa},
+    {path: 'verde', component: Zapatos},
+    {path: 'dulces', component: Joyas}
+    ,{path: 'cart', component: CartPage}
 ];

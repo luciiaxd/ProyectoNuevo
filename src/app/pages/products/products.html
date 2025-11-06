@@ -5,7 +5,7 @@
             <!--ngfor DIRECTIVA que permite iterar colecciones/arreglos funcionalidad similar al for de foreach-->
             <div id="card">
                 <div class="card" >
-                    <img src="{{i.img}}" class="card-img-top" alt="{{i.alt}}">
+                    <img [src]="i.img" class="card-img-top" [alt]="i.alt" loading="lazy">
                     <div class="card-body">
                         <h5 class="card-title">{{i.titulo}}</h5>
                         <p class="card-text">{{i.descripcion}}-{{i.precio}}</p>
@@ -42,7 +42,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <img src="{{tarjetaSeleccionada?.img}}" alt="{{tarjetaSeleccionada?.alt}}">
+  <img [src]="tarjetaSeleccionada?.img" [alt]="tarjetaSeleccionada?.alt" loading="lazy">
         {{tarjetaSeleccionada?.descripcion}}
       </div>
       <div class="modal-footer">

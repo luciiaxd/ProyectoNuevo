@@ -1,0 +1,32 @@
+<div class="container my-4">
+  <h2>Carrito</h2>
+
+  <div *ngIf="items.length === 0">
+    <p>Tu carrito está vacío.</p>
+  </div>
+
+  <div class="row" *ngIf="items.length > 0">
+    <div class="col-12">
+      <ul class="list-group">
+        <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let it of items">
+          <div class="d-flex align-items-center">
+            <img [src]="it.img" [alt]="it.alt" style="width:60px;height:60px;object-fit:cover;margin-right:12px;" loading="lazy">
+            <div>
+              <div class="fw-bold">{{it.titulo}}</div>
+              <div class="text-muted small">{{it.descripcion}}</div>
+            </div>
+          </div>
+          <div>
+            <span class="me-3">{{it.precio}}</span>
+            <button class="btn btn-sm btn-outline-danger" (click)="remove(it)">Eliminar</button>
+          </div>
+        </li>
+      </ul>
+
+      <div class="mt-3 d-flex justify-content-end">
+        <button class="btn btn-secondary me-2" (click)="clear()">Vaciar carrito</button>
+        <button class="btn btn-primary">Ir a pagar</button>
+      </div>
+    </div>
+  </div>
+</div>
