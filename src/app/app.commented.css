@@ -1,0 +1,133 @@
+/* Archivo: app.commented.css
+   Estilos principales de la aplicación con explicaciones para principiantes.
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
+
+/* Barra de navegación (clase .navbar) */
+.navbar {
+    background-color: rgb(223, 71, 134); /* color de fondo de la barra */
+}
+
+/* Aplica una sombra al texto de la marca y enlaces del navbar */
+.navbar-brand, .nav-link, .navbar-text {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Tarjeta de perfume: animaciones suaves cuando se aplica la clase hovered */
+.perfume-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.perfume-card.hovered {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Variables CSS definidas en :root para reutilizar colores */
+:root {
+    --color-pink-primary: #ffb6c1; /* Rosa claro */
+    --color-pink-secondary: #f06292; /* Rosa más intenso */
+    --color-text-dark: #333;
+    --color-text-light: #fff;
+    --color-bg-light: #fdf6f7; /* Fondo casi blanco */
+}
+
+/* Estilos generales para el body */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--color-bg-light);
+    color: var(--color-text-dark);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Header: banner superior */
+header {
+    background-color: var(--color-pink-secondary);
+    color: var(--color-text-light);
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 3em;
+    margin: 0;
+    color: #ffd9e6;
+    text-shadow: 2px 2px var(--color-text-dark);
+}
+
+header p {
+    font-style: italic;
+    margin-top: 5px;
+}
+
+/* Contenedor general del contenido */
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+h2 {
+    color: var(--color-pink-secondary);
+    margin-bottom: 30px;
+    font-size: 2em;
+    border-bottom: 2px solid var(--color-pink-primary);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Diseño de la lista de perfumes usando grid */
+.perfume-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.perfume-card {
+    background-color: var(--color-pink-primary);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.perfume-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+    background-color: #ffc9d1;
+}
+
+.perfume-card h3 {
+    color: var(--color-text-dark);
+    font-size: 1.5em;
+    margin-top: 0;
+}
+
+.perfume-card p {
+    font-size: 0.9em;
+    min-height: 40px; /* mantiene altura similar entre tarjetas */
+}
+
+.perfume-card img {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 15px;
+    border: 3px solid var(--color-pink-secondary);
+}
+
+footer {
+    background-color: var(--color-pink-secondary);
+    color: var(--color-text-light);
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 40px;
+    font-size: 0.8em;
+}

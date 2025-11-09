@@ -1,0 +1,15 @@
+/* Archivo: joyas.commented.css
+   Archivo original vacío: plantilla comentada con ejemplos de estilos para la sección "joyas".
+*/
+
+.jewelry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 14px;
+}
+
+.jewelry-card {
+  padding: 10px;
+  border-radius: 8px;
+  background: linear-gradient(180deg, #fff, #ffeef2);
+}

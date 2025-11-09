@@ -1,0 +1,19 @@
+/* Archivo: zapatos.commented.css
+   Archivo original vacío: esta copia comentada explica qué estilos podrías añadir
+   para la sección "verde / zapatos".
+*/
+
+/* Contenedor para la galería de zapatos */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+/* Tarjeta individual */
+.item {
+  background: #fff;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}

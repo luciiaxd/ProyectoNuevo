@@ -1,0 +1,26 @@
+// Archivo: new-product.spec.commented.ts
+// Prueba automática para el componente NewProduct. Explicación en español incluida.
+
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { NewProduct } from './new-product';
+
+describe('NewProduct', () => {
+  let component: NewProduct;
+  let fixture: ComponentFixture<NewProduct>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [NewProduct]
+    })
+    .compileComponents();
+
+    fixture = TestBed.createComponent(NewProduct);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

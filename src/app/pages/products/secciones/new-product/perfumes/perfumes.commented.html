@@ -1,0 +1,57 @@
+<!-- Archivo: perfumes.commented.html
+     Versión comentada de perfumes.html dentro de la sección new-product.
+     Contiene un formulario corto y una lista de productos (ejemplo).
+-->
+
+<div class="container">
+    <h2>Nuevo producto</h2>
+    <!-- [formGroup] y ngSubmit no están declarados aquí (esto es una plantilla de ejemplo)
+         En el componente TypeScript puedes definir un FormGroup y una función para manejar el envío -->
+    <form>
+        <div class="mb-3">
+        <label for="nombre" class="form-label">nombre</label>
+        <input id="nombre" type="text" class="form-control">
+        </div>
+
+        <!-- Aquí habría más campos del formulario (precio, descripción, etc.) -->
+
+    </form>
+</div>
+
+<!-- Debajo hay una lista de productos renderizada con *ngFor (similar a products.html) -->
+<div class="container">
+    <div class="row">
+        <div *ngFor="let i of infoTarjeta" class="col-lg-3 col-md-6 col-sm-12 col-xs-12 mb-4">
+            <div id="card">
+                <div class="card" >
+                    <img [src]="i.img" class="card-img-top" [alt]="i.alt" loading="lazy">
+                    <div class="card-body">
+                        <h5 class="card-title">{{i.titulo}}</h5>
+                        <p class="card-text">{{i.descripcion}}-{{i.precio}}</p>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#verMasinfo" (click)="vermas(i)">Ver mas</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de ejemplo para mostrar más información -->
+<div class="modal fade" id="verMasinfo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Detalle</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+    <img [src]="tarjetaSeleccionada?.img" [alt]="tarjetaSeleccionada?.alt" loading="lazy">
+        {{tarjetaSeleccionada?.descripcion}}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

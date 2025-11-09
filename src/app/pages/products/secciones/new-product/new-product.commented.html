@@ -1,0 +1,80 @@
+<!-- Archivo: new-product.commented.html
+     Esta es una copia del archivo original con comentarios explicativos
+     línea por línea en español para alguien que no tiene experiencia.
+-->
+
+<!-- 1: Contenedor principal (Bootstrap) -> crea márgenes y centra el contenido -->
+<div class="container">
+
+    <!-- 2: Título visible en la página -->
+    <h2>Nuevo producto</h2>
+    
+    <!-- 3: Inicio del formulario Angular (Reactive Forms)
+         - [formGroup]="nuevoProducto": vincula este <form> con un objeto FormGroup
+           que está definido en el componente TypeScript (nuevoProducto).
+         - (ngSubmit)="crearProducto()": cuando el formulario se envía, se
+           llama a la función crearProducto() del componente.
+    -->
+    <form [formGroup]="nuevoProducto" (ngSubmit)="crearProducto()">
+        
+        <!-- 4: Grupo de campo (Bootstrap .mb-3 añade margen inferior) -->
+        <div class="mb-3">
+            <!-- 5: Etiqueta para el campo de nombre
+                 - for="nombre" debería coincidir con el id del input
+            -->
+            <label for="nombre" class="form-label">nombre</label>
+            <!-- 6: Input de texto para el nombre
+                 - id="nombre": identifica el input (se recomienda que sea único)
+                 - type="text": tipo de campo
+                 - class="form-control": clase de Bootstrap para estilos
+                 - formControlName="nombre": vincula este input con el control
+                   llamado "nombre" dentro del FormGroup (en el .ts)
+            -->
+            <input id="nombre" type="text" class="form-control" formControlName="nombre">
+        </div>
+
+        <!-- 7: Otro grupo de campo para el precio -->
+        <div class="mb-3">
+            <!-- Atención: aquí el label también usa for="nombre" -> debería ser for="precio" -->
+            <label for="nombre" class="form-label">precio</label>
+            <!-- Atención: este input también tiene id="nombre" -> esto causa ids duplicados
+                 (cada id en HTML debe ser único). Recomendación: usar id="precio" aquí
+                 y que el label tenga for="precio".
+            -->
+            <input id="nombre" type="text" class="form-control" formControlName="precio">
+        </div>
+
+        <!-- 8: Grupo para la descripción -->
+        <div class="mb-3">
+            <!-- Igual que antes: label for debe coincidir con el id del input -->
+            <label for="nombre" class="form-label">descripcion</label>
+            <input id="nombre" type="text" class="form-control" formControlName="descripcion">
+        </div>
+
+        <!-- 9: Grupo para la URL o nombre de la imagen -->
+        <div class="mb-3">
+            <label for="nombre" class="form-label">img</label>
+            <input id="nombre" type="text" class="form-control" formControlName="img">
+        </div>
+
+        <!-- 10: Botón de envío
+             - type="submit": al hacer clic se intenta enviar el formulario
+             - class="btn btn-primary w-100": estilos de Bootstrap (botón azul, ancho 100%)
+             - [disabled]="!nuevoProducto.valid": el botón queda desactivado mientras
+               el FormGroup no sea válido (por ejemplo, faltan valores requeridos)
+        -->
+        <button type="submit" class="btn btn-primary w-100" [disabled]="!nuevoProducto.valid">Agregar producto</button>
+    </form>
+</div>
+
+<!-- NOTAS ADICIONALES:
+     - En Angular, este HTML se complementa con código TypeScript (por ejemplo
+       en `new-product.ts`) donde se define el FormGroup `nuevoProducto` y la
+       función `crearProducto()` que procesa los datos.
+     - Importante corregir los ids duplicados: cada <input> debe tener un id único
+       (ej: id="nombre", id="precio", id="descripcion", id="img") y las etiquetas
+       <label for="..."> deben apuntar al id correcto.
+     - Para implementar validaciones (requerido, minLength, etc.) se configuran
+       en el FormGroup del componente y así `nuevoProducto.valid` reflejará si
+       el formulario es válido.
+-->

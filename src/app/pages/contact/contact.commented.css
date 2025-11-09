@@ -1,0 +1,38 @@
+/* Archivo: contact.commented.css
+   Estilos para la página de contacto (explicados para principiantes).
+   El archivo original `contact.css` es corto/ligero; aquí tienes reglas comunes
+   que podrías usar para un formulario de contacto.
+*/
+
+/* Contenedor principal: centra el formulario y limita su ancho */
+.contact-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Etiqueta y campo de formulario */
+.contact-container label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+.contact-container input,
+.contact-container textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-bottom: 0.75rem;
+}
+
+/* Botón de envío */
+.contact-container .btn-submit {
+  background-color: #f06292; /* rosa */
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}

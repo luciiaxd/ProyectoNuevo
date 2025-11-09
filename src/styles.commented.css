@@ -1,0 +1,25 @@
+/* Archivo: styles.commented.css
+   Estilos globales de la aplicación con explicaciones en español para principiantes.
+*/
+
+/* @import: importa una fuente desde Google Fonts para usar en toda la página */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
+
+/* body: estilos aplicados al elemento <body> (fondo de la página) */
+body {
+    background-color: rgb(241, 154, 183); /* color de fondo rosado claro */
+}
+
+/* * selecciona todos los elementos de la página -> aquí se define la fuente por defecto */
+* {
+    font-family: "Merriweather", serif; /* tipo de letra importada arriba */
+    font-optical-sizing: auto; /* mejora la legibilidad en algunos navegadores */
+    /* font-weight y font-style se establecen de forma predeterminada; en general
+       no se debe usar 'weight' como valor literal. Normalmente se usan números (400,700).
+       Dejamos el ejemplo tal cual pero notamos que puede no tener efecto. */
+    font-weight: weight;
+    font-style: normal;
+    /* font-variation-settings controla ejes variables de la fuente; aquí se fija el ancho */
+    font-variation-settings:
+        "wdth" 100;
+}

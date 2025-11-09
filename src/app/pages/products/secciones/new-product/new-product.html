@@ -4,23 +4,27 @@
     <form [formGroup]="nuevoProducto" (ngSubmit)="crearProducto()">
         
         <div class="mb-3">
+            <!-- Nombre del producto -->
             <label for="nombre" class="form-label">nombre</label>
-            <input id="nombre" type="text" class="form-control" formControlName="nombre">
+            <input id="nombre" name="nombre" type="text" placeholder="Ej: Perfume Floral" class="form-control" formControlName="nombre">
         </div>
 
         <div class="mb-3">
-            <label for="nombre" class="form-label">precio</label>
-            <input id="nombre" type="text" class="form-control" formControlName="precio">
+            <!-- Precio: usamos un id y label distintos y type="number" para mejor UX -->
+            <label for="precio" class="form-label">precio</label>
+            <input id="precio" name="precio" type="number" step="0.01" min="0" placeholder="Ej: 19.99" class="form-control" formControlName="precio">
         </div>
 
         <div class="mb-3">
-            <label for="nombre" class="form-label">descripcion</label>
-            <input id="nombre" type="text" class="form-control" formControlName="descripcion">
+            <!-- Descripción: identificador único -->
+            <label for="descripcion" class="form-label">descripcion</label>
+            <input id="descripcion" name="descripcion" type="text" placeholder="Breve descripción del producto" class="form-control" formControlName="descripcion">
         </div>
 
         <div class="mb-3">
-            <label for="nombre" class="form-label">img</label>
-            <input id="nombre" type="text" class="form-control" formControlName="img">
+            <!-- Imagen: puede ser una URL o nombre de archivo -->
+            <label for="img" class="form-label">img</label>
+            <input id="img" name="img" type="text" placeholder="URL de la imagen (opcional)" class="form-control" formControlName="img">
         </div>
         <button type="submit" class="btn btn-primary w-100" [disabled]="!nuevoProducto.valid">Agregar producto</button>
     </form>

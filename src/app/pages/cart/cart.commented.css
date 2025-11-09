@@ -1,0 +1,40 @@
+/* Archivo: cart.commented.css
+   Estilos para la página del carrito. Explicaciones en español para cada bloque.
+*/
+
+/* Contenedor principal del carrito */
+.cart-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Lista de items: usamos list-group de Bootstrap por compatibilidad */
+.list-group-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Miniatura de imagen dentro del item */
+.cart-item-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-right: 12px;
+}
+
+/* Botones de acción */
+.cart-actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* Estilos para el resumen y botones finales */
+.cart-footer {
+  margin-top: 16px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}

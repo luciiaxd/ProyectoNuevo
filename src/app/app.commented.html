@@ -1,0 +1,110 @@
+<!-- Archivo: app.commented.html
+     Versión comentada de app.html (plantilla principal de la app) con
+     explicaciones en español para quien no conoce Angular o HTML.
+-->
+
+<!-- Nav: barra de navegación principal (Bootstrap) -->
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <!-- marca/Nombre del sitio -->
+    <a class="navbar-brand" href="#">$HIRKIN</a>
+    <!-- botón que aparece en pantallas pequeñas para mostrar/ocultar el menú -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- Lista de enlaces del menú -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <!-- href="home": cuando se usa en Angular, esto navega a la ruta 'home' definida en las rutas -->
+          <a class="nav-link active" aria-current="page" href="home">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about">Nosotros</a>
+        </li>
+
+        <!-- Menú desplegable de Productos -->
+        <li class="nav-item">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Productos </a>
+          <div class="dropdown">
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="citrico">Cítrico</a></li>
+              <li><a class="dropdown-item" href="forales">Forales</a></li>
+              <li><a class="dropdown-item" href="amaderados">Amaderados</a></li>
+              <li><a class="dropdown-item" href="verde">Verde</a></li>
+              <li><a class="dropdown-item" href="dulces">Dulces</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+
+      <!-- Formulario de búsqueda simple -->
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+        <button class="btn btn-outline-success" type="submit">Buscar</button>
+      </form>
+
+      <!-- Botón de carrito con contador (usa un observable cartCount$ en el servicio) -->
+      <div class="ms-3">
+        <button class="btn btn-outline-primary position-relative" type="button" aria-label="Carrito">
+          Carrito
+          <!-- aqui se muestra el número de items en el carrito usando async pipe de Angular -->
+          <span class="badge bg-danger ms-2">{{ cartService.cartCount$ | async }}</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- router-outlet es la 'ventana' donde Angular muestra la vista actual según la ruta -->
+<router-outlet></router-outlet>
+
+<!-- Contenido adicional de la página (ejemplo) -->
+<body>
+    <header>
+        <h1>$hirkin 🌸</h1>
+    </header>
+
+    <main>
+        <h2> Un poco de lo nuevo </h2>
+
+        <!-- Lista de tarjetas renderizada con *ngFor (repite por cada elemento en featuredTarjetas) -->
+        <section class="perfume-list">
+            <div class="perfume-card" *ngFor="let t of featuredTarjetas">
+                <h3>{{ t.titulo }}</h3>
+                <p>{{ t.descripcion }}</p>
+                <img [src]="t.img" [alt]="t.alt" loading="lazy">
+                <div class="mt-2">
+                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#verMasinfo" (click)="vermas(t)">Ver más</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal de detalle compartido (Bootstrap modal) -->
+        <div class="modal fade" id="verMasinfo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Detalle</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body text-center">
+                <img [src]="tarjetaSeleccionada?.img" [alt]="tarjetaSeleccionada?.alt" class="img-fluid mb-3" loading="lazy">
+                <h5>{{ tarjetaSeleccionada?.titulo }}</h5>
+                <p>{{ tarjetaSeleccionada?.descripcion }}</p>
+                <p *ngIf="tarjetaSeleccionada">Precio: {{ tarjetaSeleccionada.precio | currency:'ARS':'symbol' }}</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="addToCart(tarjetaSeleccionada)">Agregar al carrito</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 $hirkin. Todos los derechos reservados.</p>
+    </footer>
+</body>

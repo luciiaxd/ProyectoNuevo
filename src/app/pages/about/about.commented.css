@@ -1,0 +1,33 @@
+/* Archivo: about.commented.css
+   Estilos para la página "Nosotros" (About). Ejemplos y explicaciones para principiantes.
+*/
+
+/* Contenedor de la página About: centra el contenido y añade espacio */
+.about-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+/* Encabezado de la sección */
+.about-header h2 {
+  font-size: 2rem;
+  color: #f06292; /* color rosa secundario */
+  margin-bottom: 0.5rem;
+}
+
+/* Párrafo descriptivo */
+.about-text {
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Si hay una lista de valores/miembros */
+.about-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}

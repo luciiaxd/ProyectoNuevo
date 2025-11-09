@@ -1,0 +1,36 @@
+/* Archivo: home.commented.css
+   Estilos específicos de la página Home con explicaciones para principiantes.
+*/
+
+/* #title: estilo del título principal de la página */
+#title {
+    font-size: larger;
+    display: flex;
+    justify-content: center;
+    font-size:70px; /* tamaño grande para el título */
+    color: rgb(241, 208, 229); /* color rosado claro */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* sombra al texto */
+    margin-top: 50px;
+    height: 120px;
+}
+
+/* Botón de acción personalizado */
+.btn-action {
+    background-color: rgb(165, 42, 42); /* marrón oscuro */
+    color: rgb(255, 255, 255); /* texto blanco */
+}
+
+/* #card: contenedor que centra las tarjetas de producto */
+#card{
+    display: flex;
+    justify-content: center;
+    gap: 50px; /* espacio entre tarjetas */
+}
+
+/* #desc: párrafo descriptivo bajo el carrusel */
+#desc{
+    font-size: 20px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

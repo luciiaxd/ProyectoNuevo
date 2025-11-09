@@ -1,0 +1,16 @@
+/* Archivo: carteras.commented.css
+   Archivo original vacío: plantilla comentada con ejemplos de estilos para carteras.
+*/
+
+.card-list {
+  display:flex;
+  flex-wrap:wrap;
+  gap:16px;
+}
+
+.card-item {
+  width: 220px;
+  padding:12px;
+  border-radius:10px;
+  background:#fff;
+}

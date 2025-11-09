@@ -1,0 +1,23 @@
+/* Archivo: new-product.commented.css
+   Archivo vacío en el original; esta copia comentada sirve de plantilla y explica
+   dónde añadir estilos para la sección "new-product".
+
+   Sugerencia: aquí puedes definir estilos para el formulario y la lista de
+   productos creados desde esa página.
+*/
+
+/* Ejemplo de regla para centrar el contenedor del formulario */
+.form-container {
+  max-width: 800px; /* ancho máximo del formulario */
+  margin: 0 auto; /* centra horizontalmente */
+  padding: 1rem; /* espacio interior */
+}
+
+/* Estilo de los campos del formulario */
+.form-control {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
