@@ -4,11 +4,14 @@
 // qué hace cada parte: imports, decorador @Component, propiedades y métodos.
 
 import { Component } from '@angular/core';
+import { NgForOf } from "../../../../../../../node_modules/@angular/common/common_module.d";
 
 @Component({
   selector: 'app-perfumes-citrico', // nombre del componente en las plantillas
   templateUrl: './perfumes.html',   // referencia al archivo HTML de la vista
   styleUrls: ['./perfumes.css']      // referencia al archivo CSS de estilos
+  ,
+  imports: [NgForOf]
 })
 export class PerfumesCitricoPage {
   // En esta sección normalmente irían datos específicos de la vista, por ejemplo
