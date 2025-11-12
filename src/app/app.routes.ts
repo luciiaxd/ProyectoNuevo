@@ -8,6 +8,7 @@ import { Ropa } from './pages/products/secciones/new-product/amaderados/ropa';
 import { Zapatos } from './pages/products/secciones/new-product/verde/zapatos';
 import { Joyas } from './pages/products/secciones/new-product/dulces/joyas';
 import { CartPage } from './pages/cart/cart';
+import { OfertasComponent } from './pages/ofertas/ofertas.component';
 
 export const routes: Routes = [
     {
@@ -21,6 +22,7 @@ export const routes: Routes = [
     {path: 'forales', component: Carteras},
     {path: 'amaderados', component: Ropa},
     {path: 'verde', component: Zapatos},
-    {path: 'dulces', component: Joyas}
-    ,{path: 'cart', component: CartPage}
+    {path: 'dulces', component: Joyas},
+    {path: 'cart', component: CartPage},
+    {path: 'ofertas', component: OfertasComponent}
 ];

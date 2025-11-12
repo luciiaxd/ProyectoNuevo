@@ -18,7 +18,7 @@
 </div>
 <div class="container">
     <div class="row">
-        <div *ngFor*="let i of infoTarjeta" class="col-lg-3 col-md-6 col-sm-12 col-xs-12 mb-4">
+        <div *ngFor="let i of infoTarjeta" class="col-lg-3 col-md-6 col-sm-12 col-xs-12 mb-4">
             <!--let i definicion de la variable que representa 1 elemento de la coleccion infotarjeta-->
             <!--ngfor DIRECTIVA que permite iterar colecciones/arreglos funcionalidad similar al for de foreach-->
             <div id="card">
@@ -27,7 +27,7 @@
                     <div class="card-body">
                         <h5 class="card-title">{{i.titulo}}</h5>
                         <p class="card-text">{{i.descripcion}}-{{i.precio}}</p>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#verMasinfo" (click)=vermas(i)">Ver mas</button>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#verMasinfo" (click)=vermas(i)>Ver mas</button>
                     </div>
                 </div>
             </div>

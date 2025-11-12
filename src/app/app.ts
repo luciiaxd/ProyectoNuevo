@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { About } from "./pages/about/about";
 import { Home } from "./pages/home/home";
+
 import { Products } from './pages/products/products';
 import { Tarjeta } from './models/tarjeta';
 import { TarjetasService } from './services/tarjetas.service';
@@ -126,7 +127,7 @@ export class App {
   },
   {
     id: "14T",
-    img: "assets/4125EUGqaML._SY300_SX300_QL70_FMwebp_.webpg",
+    img: "assets/good-girl-blush-elixir-eau-de-parfum-carolina-herrera.jpg",
     alt: "Imagen de un perfume",
     titulo: "Good Girl Blush Elixir de Carolina Herrera",
     descripcion: "Aroma floral frutal.",
@@ -139,6 +140,86 @@ export class App {
     titulo: "Gucci Bloom",
     descripcion: "Fragancia floral.",
     precio: 420.000
+  },
+  {
+    id: "16T",
+    img: "assets/shopping.webp",
+    alt: "Imagen de un perfume",
+    titulo: "Yves Saint Laurent Libre Edp",
+    descripcion: "Aroma floral .",
+    precio: 580.000
+  },
+  {
+    id: "17T",
+    img: "assets/XXL_p0217190916.webp",
+    alt: "Imagen de un perfume",
+    titulo: "Flower Knows - Strawberry Cupid Perfume",
+    descripcion: "Aroma Dulce a frutilla.",
+    precio: 300.000
+  },
+  {
+    id: "18T",
+    img: "assets/eternal-roots_100ml__FINAL.webp",
+    alt: "Imagen de un perfume",
+    titulo: "ETERNAL ROOTS PARFUM orabella",
+    descripcion: "Aroma .",
+    precio: 350.000
+  },
+  {
+    id: "19T",
+    img: "assets/375x500.92428.avif",
+    alt: "Imagen de un perfume",
+    titulo: "Window2Soul Orebella",
+    descripcion: "Aroma rosa y jazmín con notas de limón.",
+    precio: 350.000
+  },
+  {
+    id: "21T",
+    img: "assets/170782-800-1067.webp",
+    alt: "Imagen de un perfume",
+    titulo: "Victoria's Secret Mist Corporal Romantic",
+    descripcion: "Aroma Pétalos de rosa. Almizcle puro..",
+    precio: 30.000
+  },
+   {
+    id: "22T",
+    img: "assets/170783-800-1067.webp",
+    alt: "Imagen de un perfume",
+    titulo: "Victoria's Secret Mist Corporal Rush",
+    descripcion: "Aroma Frutal",
+    precio: 30.000
+  },
+  {
+    id: "23T",
+    img: "assets/183803-800-1067.webp",
+    alt: "Imagen de un perfume",
+    titulo: "Victoria's Secret Mist Corporal Sizzling Vanilla",
+    descripcion: "Aroma vainilla dulce ",
+    precio: 30.000
+  },
+  {
+    id: "24T",
+    img: "assets/185785-800-1067.webp",
+    alt: "Imagen de un perfume",
+    titulo: "Victoria's Secret Mist Corporal Bare Vanilla",
+    descripcion: "Aroma vainilla suave ",
+    precio: 30.000
+  },
+  {
+    id: "25T",
+    img: "assets/185842-800-1067.webp",
+    alt: "Imagen de un perfume",
+    titulo: "Victoria's Secret Mist Corporal Coconut Passion",
+    descripcion: "Aroma coco tropical ",
+    precio: 30.000
+  },
+  {
+    id: "26T",
+    img: "assets/Prada_25_Paradoxe_Radical_Essence_Functional Packshot_90ml_Bottle Single_Front No Shadow_3614274305401.webp",
+    alt: "Imagen de un perfume",
+    titulo: "Prada Paradoxe Radical Essence Parfum ",
+    descripcion: "Aroma amaderado floral ",
+    precio: 380.000
   },
   ];
   public tarjetaSeleccionada: Tarjeta | null = null;
